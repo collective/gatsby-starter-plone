@@ -1,23 +1,25 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# gatsby-starter-plone
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+Gatsby starter for Plone
 
 ## Install
 
-Make sure that you have the Gatsby CLI program installed:
+Make sure you have Gatsby CLI installed globally:
+
 ```sh
 npm install --global gatsby-cli
 ```
 
-And run from your CLI:
+Use this starter from Gatsby CLI:
+
 ```sh
-gatsby new gatsby-example-site
+gatsby new <your-project-name> https://github.com/collective/gatsby-starter-plone
 ```
 
 Then you can run it by:
+
 ```sh
-cd gatsby-example-site
+cd <your-project-name>
 gatsby develop
 ```
 
