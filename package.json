@@ -1,8 +1,7 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "gatsby-starter-plone",
+  "description": "Gatsby starter for Plone",
+  "version": "0.0.0",
   "dependencies": {
     "gatsby": "next",
     "gatsby-plugin-react-helmet": "next",
@@ -11,8 +10,10 @@
     "react-helmet": "^5.2.0"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "plone"
   ],
+  "author": "Ajay NS <ajay.ns@outlook.com>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -25,6 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  }
+    "url": "https://github.com/collective/gatsby-starter-plone"
+  },
+  "bugs": {
+    "url": "https://github.com/collective/gatsby-starter-plone/issues"
+  },
+  "homepage": "https://github.com/collective/gatsby-starter-plone#readme"
 }
