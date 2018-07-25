@@ -7,7 +7,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-plone',
       options: {
-        baseUrl: 'http://localhost:8080/Plone/',
+        baseUrl: 'https://plonedemo.kitconcept.com/en',
         showLogs: true,
       },
     },
