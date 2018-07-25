@@ -5,8 +5,10 @@ import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <h2>{data.ploneDocument.title}</h2>
-    <p>{data.ploneDocument.description}</p>
+    <article>
+      <h1>{data.ploneDocument.title}</h1>
+      <p>{data.ploneDocument.description}</p>
+    </article>
   </Layout>
 );
 
