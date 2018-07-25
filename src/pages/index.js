@@ -1,15 +1,23 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
+    <h2>{data.ploneDocument.title}</h2>
+    <p>{data.ploneDocument.description}</p>
   </Layout>
 );
 
 export default IndexPage;
+
+export const query = graphql`
+  query IndexPageQuery {
+    ploneDocument(_path: { eq: "/frontpage/" }) {
+      id
+      title
+      description
+    }
+  }
+`;
