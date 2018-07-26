@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Folder from '../components/Folder';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -9,6 +10,7 @@ const IndexPage = ({ data }) => (
       <h1>{data.ploneDocument.title}</h1>
       <p>{data.ploneDocument.description}</p>
     </article>
+    <Folder data={data.ploneSite} title="Contents" />
   </Layout>
 );
 
@@ -20,6 +22,9 @@ export const query = graphql`
       id
       title
       description
+    }
+    ploneSite(_path: { eq: "/" }) {
+      ...Site
     }
   }
 `;
