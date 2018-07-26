@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Starter Plone',
+    subTitle: 'Kickstart Gatsby static site development with Plone',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
