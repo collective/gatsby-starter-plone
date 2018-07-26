@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import './header.css';
+
 const Header = ({ siteData }) => (
   <header
     style={{
@@ -15,7 +17,7 @@ const Header = ({ siteData }) => (
         padding: '1.45rem 1.0875rem',
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <div className="title">
         <Link
           to="/"
           style={{
@@ -25,16 +27,8 @@ const Header = ({ siteData }) => (
         >
           {siteData.title}
         </Link>
-      </h1>
-      <h5
-        style={{
-          color: 'white',
-          textDecoration: 'none',
-          margin: '16px 0 0 0',
-        }}
-      >
-        {siteData.subTitle}
-      </h5>
+      </div>
+      <div className="sub-title">{siteData.subTitle}</div>
     </div>
   </header>
 );
