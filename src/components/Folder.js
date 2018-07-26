@@ -39,4 +39,13 @@ export const query = graphql`
     description
     _path
   }
+
+  fragment Site on PloneSite {
+    id
+    title
+    children {
+      ...Folder
+    }
+    _path
+  }
 `;
