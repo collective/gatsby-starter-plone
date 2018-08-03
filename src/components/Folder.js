@@ -8,12 +8,12 @@ const Folder = ({ data, title }) => (
       <strong>{data.description}</strong>
     </p>
     <ul className="list-group">
-      {data.children.filter(child => child.title).map(child => (
-        <li key={child._path} className="list-group-item">
+      {data.items.filter(item => item.title).map(item => (
+        <li key={item._path} className="list-group-item">
           <p>
-            <Link to={child._path}>{child.title}</Link>
+            <Link to={item._path}>{item.title}</Link>
           </p>
-          {child.description && <p>{child.description}</p>}
+          {item.description && <p>{item.description}</p>}
         </li>
       ))}
     </ul>
@@ -27,24 +27,25 @@ export const query = graphql`
     id
     title
     description
-    children {
-      ...SubFolder
+    items {
+      _id
+      _path
+      _type
+      description
+      title
     }
-    _path
-  }
-
-  fragment SubFolder on PloneFolder {
-    id
-    title
-    description
     _path
   }
 
   fragment Site on PloneSite {
     id
     title
-    children {
-      ...Folder
+    items {
+      _id
+      _path
+      _type
+      description
+      title
     }
     _path
   }
