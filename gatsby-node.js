@@ -10,13 +10,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allPloneCollection {
-        edges {
-          node {
-            _path
-          }
-        }
-      }
       allPloneDocument {
         edges {
           node {
@@ -49,7 +42,6 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
   []
     .concat(
-      result.data.allPloneCollection.edges,
       result.data.allPloneDocument.edges,
       result.data.allPloneEvent.edges,
       result.data.allPloneFolder.edges,

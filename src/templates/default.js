@@ -6,20 +6,11 @@ import Event from '../components/Event';
 import Folder from '../components/Folder';
 import Layout from '../components/Layout';
 import NewsItem from '../components/NewsItem';
-import Collection from '../components/Collection';
 
 const componentFor = data => {
   const nodes = query => (query ? query['edges'] : []).map(edge => edge.node);
   if (data) {
-    if (data['ploneCollection']) {
-      return (
-        <Collection
-          data={data['ploneCollection']}
-          images={nodes(data['allPloneImage'])}
-          files={nodes(data['allPloneFile'])}
-        />
-      );
-    } else if (data['ploneDocument']) {
+    if (data['ploneDocument']) {
       return (
         <Document
           data={data['ploneDocument']}
@@ -65,9 +56,6 @@ export default DefaultLayout;
 
 export const query = graphql`
   query DefaultTemplateQuery($path: String!) {
-    ploneCollection(_path: { eq: $path }) {
-      ...Collection
-    }
     ploneDocument(_path: { eq: $path }) {
       ...Document
     }
