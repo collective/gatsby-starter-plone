@@ -9,7 +9,7 @@ const NewsItem = ({ data, images, files }) => (
     <Img resolutions={data.image.childImageSharp.fixed} />
     <p>
       <small>
-        Published on <em>{data.effective}</em>
+        Published on <em>{data.created}</em>
       </small>
     </p>
     {data.description ? (
@@ -28,7 +28,7 @@ export const query = graphql`
     id
     title
     description
-    effective(formatString: "MMMM Do, YYYY")
+    created(formatString: "MMMM Do, YYYY")
     image {
       childImageSharp {
         fixed(width: 200) {
