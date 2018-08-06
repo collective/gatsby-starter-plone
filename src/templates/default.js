@@ -50,7 +50,9 @@ const componentFor = data => {
   }
 };
 
-const DefaultLayout = ({ data }) => <Layout>{componentFor(data)}</Layout>;
+const DefaultLayout = ({ data }) => (
+  <Layout breadcrumbs={data.ploneBreadcrumbs}>{componentFor(data)}</Layout>
+);
 
 export default DefaultLayout;
 
@@ -80,6 +82,13 @@ export const query = graphql`
         node {
           ...Image
         }
+      }
+    }
+    ploneBreadcrumbs(_path: { eq: $path }) {
+      items {
+        _id
+        _path
+        title
       }
     }
   }
