@@ -3,7 +3,7 @@ module.exports = {
     title: 'Gatsby Starter Plone',
     subTitle: 'Kickstart Gatsby static site development with Plone',
   },
-  pathPrefix: '',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: 'gatsby-source-plone',
