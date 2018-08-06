@@ -9,6 +9,7 @@
     "gatsby-plugin-sass": "^2.0.0-beta.6",
     "gatsby-plugin-sharp": "^2.0.0-beta.7",
     "gatsby-source-filesystem": "^2.0.1-beta.10",
+    "gatsby-source-plone": "git+https://github.com/collective/gatsby-source-plone.git",
     "gatsby-transformer-sharp": "^2.1.1-beta.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
