@@ -6,7 +6,7 @@ cache:
   - "./.cache"
   - "./public"
 install: yarn install
-before_script: sed -i "s|'',|'/gatsby-starter-plone/',|" ./gatsby-config.js
+before_script: sed -i "s|'/',|'/gatsby-starter-plone/',|" ./gatsby-config.js
 script: "./node_modules/.bin/gatsby build --prefix-paths"
 deploy:
   provider: pages
