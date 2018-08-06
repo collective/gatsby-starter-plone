@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Plone',
-    subTitle: 'Kickstart Gatsby static site development with Plone',
+    title: 'Kickstart Gatsby static site development with Plone',
+    subTitle: 'Plone + Gatsby = \u2764',
   },
   plugins: [
     {
