@@ -1,0 +1,22 @@
+language: node_js
+node_js: 10.1.0
+cache:
+  yarn: true
+  directories:
+  - "./.cache"
+  - "./public"
+install: yarn install
+before_script: sed -i "s|'',|'/gatsby-starter-plone/',|" ./gatsby-config.js
+script: "./node_modules/.bin/gatsby build --prefix-paths"
+deploy:
+  provider: pages
+  github-token: "$GITHUB_TOKEN"
+  local-dir: "./public"
+  target-branch: gh-pages
+  keep-history: false
+  skip-cleanup: true
+  on:
+    branch: master
+env:
+  global:
+    secure: HKCyu+tOFoiHei8UExgarwlxfH5XBmeSgmIKWBNqRTP97WU2ux2e8gU6+Fy61husEaxWxJufK5O9sjuWSZrFocB5WuH7NWQr0M73rYcRGt+pA0NpnajjILh3en5NDBArax6/nl1POBtq1uBTaGkwOzOrlIumVBWjxmiXzU3+0i7luoZsWO8JYcuUPV4di1Z9vFIcmRP50y4ki+KZ0ywPbak29t007ZlZq3Z1+QVVsGb+fK+l7upbCLmupXe5SJGyq0JZwr7GDiHPyGLFifHyNsQhas3wqDZx4+5lbDRFEPX4Wvlo+Qsqk3cfvg4LP57iTlQkv7JOJlXDeT9mTuQFkWBxXsp9u7R8055gIFiz4ScXnHGM+PMabR0gsdxn4SJd+CL9iSr4M7X4i9Gwkk8HULTfCWqS95Gt4IUx6ZuM11aMoCAM0LsbSHom988l+hpjw5uoC0v4r21z0m1SIFhI8vyPJnlwN0TKlpkrarVrtX74MGusDGtu+Vcxt1nQJ72NrT0iS04z+uyGLukAuwvWl4hZ9u6FBUC7VEDU9juD8f8OuQVuvHVj8eozVQz44FPsL8OCBxvg4zeHwEg0dx7XESh4qGlCSxdqTcg8dyYcjtyNqdGw3nU497qs6ybo9CsKxT98SPR3enkVOvgLqtXvTVdAZHnkh2SwfV4/M55kLE8=
