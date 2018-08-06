@@ -7,7 +7,6 @@ const Header = ({ siteData }) => (
   <header
     style={{
       background: '#007eb6',
-      marginBottom: '1.45rem',
     }}
   >
     <div

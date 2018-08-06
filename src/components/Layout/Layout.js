@@ -5,8 +5,9 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../Header';
 import './Layout.css';
+import Breadcrumbs from '../Breadcrumbs';
 
-const Layout = ({ children, data }) => (
+const Layout = ({ breadcrumbs, children, data }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -28,12 +29,14 @@ const Layout = ({ children, data }) => (
           ]}
         />
         <Header siteData={data.site.siteMetadata} />
+        {breadcrumbs && <Breadcrumbs data={breadcrumbs} />}
         <div
           style={{
             margin: '0 auto',
             maxWidth: 960,
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0,
+            marginTop: '2em',
           }}
         >
           {children}
