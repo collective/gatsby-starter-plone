@@ -5,9 +5,12 @@
   "dependencies": {
     "gatsby": "^2.0.0-beta.59",
     "gatsby-image": "^2.0.0-beta.7",
+    "gatsby-plugin-manifest": "^2.0.2-beta.4",
+    "gatsby-plugin-offline": "^2.0.0-beta.9",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
     "gatsby-plugin-sharp": "^2.0.0-beta.7",
     "gatsby-source-filesystem": "^2.0.1-beta.10",
+    "gatsby-source-plone": "git+https://github.com/collective/gatsby-source-plone.git",
     "gatsby-transformer-sharp": "^2.1.1-beta.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
