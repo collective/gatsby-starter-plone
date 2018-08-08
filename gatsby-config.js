@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Plone',
-    subTitle: 'Kickstart Gatsby static site development with Plone',
+    title: 'Kickstart Gatsby static site development with Plone',
+    subTitle: 'Plone + Gatsby = \u2764',
   },
   pathPrefix: '/',
   plugins: [
@@ -32,7 +32,6 @@ module.exports = {
   },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
   ],

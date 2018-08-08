@@ -6,6 +6,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Header from '../Header';
 import './Layout.css';
 import Breadcrumbs from '../Breadcrumbs';
+import NavBar from '../NavBar';
 
 const Layout = ({ breadcrumbs, children, data }) => (
   <StaticQuery
@@ -28,6 +29,7 @@ const Layout = ({ breadcrumbs, children, data }) => (
             { name: 'keywords', content: 'gatsby, plone' },
           ]}
         />
+        <NavBar />
         <Header siteData={data.site.siteMetadata} />
         {breadcrumbs && <Breadcrumbs data={breadcrumbs} />}
         <div
