@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import './NavBar.css';
 
-const NavBar = () => (
+const NavBar = ({ active }) => (
   <StaticQuery
     query={graphql`
       query NavbarQuery {
@@ -28,9 +28,17 @@ const NavBar = () => (
               <Link to="/">Home</Link>
             </li>
             {data.ploneNavigation.items
-              .filter(node => node._path !== '/')
+              .filter(item => item._path !== '/')
               .map(item => (
-                <li key={item._id} className="navbar-item">
+                <li
+                  key={item._id}
+                  className={
+                    item._path === active ||
+                    (active || '').startsWith(item._path)
+                      ? 'navbar-item active'
+                      : 'navbar-item'
+                  }
+                >
                   <Link to={item._path}>{item.title}</Link>
                 </li>
               ))}

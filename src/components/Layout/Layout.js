@@ -20,31 +20,41 @@ const Layout = ({ breadcrumbs, children, data }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Gatsby Starter Plone' },
-            { name: 'keywords', content: 'gatsby, plone' },
-          ]}
-        />
-        <NavBar />
-        <Header siteData={data.site.siteMetadata} />
-        {breadcrumbs && <Breadcrumbs data={breadcrumbs} />}
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-            marginTop: '2em',
-          }}
-        >
-          {children}
-        </div>
-      </>
-    )}
+    render={data => {
+      const node = children.length
+        ? children[0].props.data
+        : children.props.data;
+      const active = node
+        ? node._path === '/frontpage/'
+          ? '/'
+          : node._path
+        : null;
+      return (
+        <>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: 'description', content: 'Gatsby Starter Plone' },
+              { name: 'keywords', content: 'gatsby, plone' },
+            ]}
+          />
+          <NavBar active={active} />
+          <Header siteData={data.site.siteMetadata} />
+          {breadcrumbs && <Breadcrumbs data={breadcrumbs} />}
+          <div
+            style={{
+              margin: '0 auto',
+              maxWidth: 960,
+              padding: '0px 1.0875rem 1.45rem',
+              paddingTop: 0,
+              marginTop: '2em',
+            }}
+          >
+            {children}
+          </div>
+        </>
+      );
+    }}
   />
 );
 
