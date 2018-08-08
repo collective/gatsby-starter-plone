@@ -29,7 +29,8 @@
   padding: 8px;
 }
 
-.navbar-item:hover {
+.navbar-item:hover,
+.navbar-item.active {
   background-color: #113156;
 }
 
