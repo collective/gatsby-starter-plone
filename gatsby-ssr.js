@@ -6,8 +6,8 @@
 import React from 'react';
 import { withPrefix } from 'gatsby';
 
-export const onRenderBody = ({ setHeadComponents, setHtmlAttributes}) => {
-  setHtmlAttributes({lang: 'en'});
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: 'en' });
   // Support for apple-touch-icons may be soon part of gatsby-plugin-manifest
   // https://github.com/gatsbyjs/gatsby/pull/7256
   setHeadComponents([
@@ -57,6 +57,6 @@ export const onRenderBody = ({ setHeadComponents, setHtmlAttributes}) => {
       rel="apple-touch-icon"
       href={withPrefix('/icons/icon-512x512.png')}
       sizes="512x512"
-    />
+    />,
   ]);
 };
