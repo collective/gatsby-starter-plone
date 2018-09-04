@@ -21,14 +21,15 @@ const useStickyLocation = current => {
   }
 };
 
-export const wrapRootComponent = ({ Root }) => () => (
+
+export const wrapRootElement = ({ element }) => (
   <LocationProvider>
     {({ location }) => {
       // Save navigated location on iOS PWA; Restore it on reload
       if (isIos() && window.navigator.standalone) {
         useStickyLocation(location.pathname);
       }
-      return <Root />;
+      return element;
     }}
   </LocationProvider>
 );
