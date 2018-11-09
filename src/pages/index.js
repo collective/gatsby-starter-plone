@@ -8,6 +8,7 @@ import Folder from '../components/Folder';
 const IndexPage = ({ data }) => (
   <Layout>
     <Document data={data.ploneDocument} />
+    <hr style={{ background: '#e8eef2' }} />
     <Folder data={data.ploneSite} title="Contents" />
   </Layout>
 );

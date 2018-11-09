@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import RichText from './RichText';
+import RichText from '../RichText';
+
+import './Folder.css';
 
 const Folder = ({ data, title, images = [], files = [] }) => {
   const listedTypes = new Set([
