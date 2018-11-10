@@ -1,0 +1,17 @@
+.list-group {
+  list-style: none;
+  margin: 16px 0;
+}
+
+.list-group-item {
+  padding: 16px;
+  background-color: #e8eef2;
+}
+
+.list-group-item a {
+  text-decoration: none;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}

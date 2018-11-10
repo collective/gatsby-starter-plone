@@ -26,6 +26,10 @@
 
 .navbar-item {
   margin: 0;
+  display: flex;
+}
+
+.navbar-item a {
   padding: 8px;
 }
 
