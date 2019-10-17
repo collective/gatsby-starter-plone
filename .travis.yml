@@ -10,11 +10,11 @@ before_script: sed -i "s|'/',|'/gatsby-starter-plone/',|" ./gatsby-config.js
 script: "./node_modules/.bin/gatsby build --prefix-paths"
 deploy:
   provider: pages
-  github-token: "$GITHUB_TOKEN"
-  local-dir: "./public"
-  target-branch: gh-pages
-  keep-history: false
-  skip-cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  local_dir: "./public"
+  target_branch: gh-pages
+  keep_history: false
+  skip_cleanup: true
   on:
     branch: master
 env:
