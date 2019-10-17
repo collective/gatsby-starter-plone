@@ -75,6 +75,9 @@ export const query = graphql`
     ploneFolder(_path: { eq: $path }) {
       ...Folder
     }
+    ploneCollection(_path: { eq: $path }) {
+      ...Collection
+    }
     ploneNewsItem(_path: { eq: $path }) {
       ...NewsItem
     }

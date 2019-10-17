@@ -84,4 +84,21 @@ export const query = graphql`
     }
     _path
   }
+
+  fragment Collection on PloneCollection {
+    id
+    title
+    description
+    text {
+      react
+    }
+    items {
+      _id
+      _path
+      _type
+      description
+      title
+    }
+    _path
+  }
 `;

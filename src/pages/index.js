@@ -15,7 +15,12 @@ const IndexPage = ({ data }) => (
       files={nodes(data['allPloneFile'])}
     />
     <hr style={{ background: '#e8eef2' }} />
-    <Folder data={data.ploneSite} title="Contents" />
+    <Folder
+      data={data.ploneSite}
+      title="Contents"
+      images={nodes(data['allSitePloneImage'])}
+      files={nodes(data['allSitePloneFile'])}
+    />
   </Layout>
 );
 
@@ -26,9 +31,6 @@ export const query = graphql`
     ploneDocument(_path: { in: ["/frontpage/", "/front-page/"] }) {
       ...Document
     }
-    ploneSite(_path: { eq: "/" }) {
-      ...Site
-    }
     allPloneFile(filter: { _backlinks: { eq: "/frontpage/" } }) {
       edges {
         node {
@@ -37,6 +39,23 @@ export const query = graphql`
       }
     }
     allPloneImage(filter: { _backlinks: { eq: "/frontpage/" } }) {
+      edges {
+        node {
+          ...Image
+        }
+      }
+    }
+    ploneSite(_path: { eq: "/" }) {
+      ...Site
+    }
+    allSitePloneFile: allPloneFile(filter: { _backlinks: { eq: "/" } }) {
+      edges {
+        node {
+          ...File
+        }
+      }
+    }
+    allSitePloneImage: allPloneImage(filter: { _backlinks: { eq: "/" } }) {
       edges {
         node {
           ...Image

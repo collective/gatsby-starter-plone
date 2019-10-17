@@ -1,4 +1,4 @@
-### Type definitions saved at 2019-10-17T19:33:59.548Z ###
+### Type definitions saved at 2019-10-17T19:43:30.960Z ###
 
 type PloneSite implements Node @dontInfer {
   description: String
@@ -199,7 +199,6 @@ type PloneCollection implements Node @dontInfer {
   item_count: Int
   items: [PloneCollectionItems]
   items_total: Int
-  language: String
   layout: String
   limit: Int
   modified: Date @dateformat
@@ -207,6 +206,7 @@ type PloneCollection implements Node @dontInfer {
   rights: String
   sort_on: String
   sort_reversed: Boolean
+  text: PloneCollectionText
   title: String
   version: String
   _path: String
@@ -230,6 +230,13 @@ type PloneCollectionItems {
   _path: String
   _id: String
   _type: String
+}
+
+type PloneCollectionText {
+  content_type: String @proxy(from: "content-type")
+  data: String
+  encoding: String
+  react: String
 }
 
 type PloneCollection_components {
