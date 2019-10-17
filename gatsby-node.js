@@ -45,6 +45,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allPloneCollection {
+        edges {
+          node {
+            _path
+          }
+        }
+      }
       allPloneNewsItem {
         edges {
           node {
@@ -59,6 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
       result.data.allPloneDocument.edges,
       result.data.allPloneEvent.edges,
       result.data.allPloneFolder.edges,
+      result.data.allPloneCollection.edges,
       result.data.allPloneNewsItem.edges
     )
     .forEach(({ node }) => {

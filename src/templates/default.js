@@ -34,6 +34,14 @@ const componentFor = data => {
           files={nodes(data['allPloneFile'])}
         />
       );
+    } else if (data['ploneCollection']) {
+      return (
+        <Folder
+          data={data['ploneCollection']}
+          images={nodes(data['allPloneImage'])}
+          files={nodes(data['allPloneFile'])}
+        />
+      );
     } else if (data['ploneNewsItem']) {
       return (
         <NewsItem
