@@ -31,14 +31,18 @@ export const query = graphql`
     ploneDocument(_path: { in: ["/frontpage/", "/front-page/"] }) {
       ...Document
     }
-    allPloneFile(filter: { _backlinks: { eq: "/frontpage/" } }) {
+    allPloneFile(
+      filter: { _backlinks: { in: ["/frontpage/", "/front-page/"] } }
+    ) {
       edges {
         node {
           ...File
         }
       }
     }
-    allPloneImage(filter: { _backlinks: { eq: "/frontpage/" } }) {
+    allPloneImage(
+      filter: { _backlinks: { in: ["/frontpage/", "/front-page/"] } }
+    ) {
       edges {
         node {
           ...Image
