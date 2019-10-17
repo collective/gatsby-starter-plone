@@ -4,7 +4,21 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+const fs = require('fs');
 const path = require('path');
+
+const PLONE_SCHEMA = 'plone-typedefs.graphql';
+
+exports.createSchemaCustomization = ({ actions }) => {
+  if (fs.existsSync(PLONE_SCHEMA)) {
+    actions.createTypes(fs.readFileSync(PLONE_SCHEMA, { encoding: 'utf-8' }));
+  } else {
+    actions.printTypeDefinitions({
+      path: PLONE_SCHEMA,
+      include: { plugins: ['gatsby-source-plone'] },
+    });
+  }
+};
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;

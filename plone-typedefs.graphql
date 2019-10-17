@@ -1,0 +1,809 @@
+### Type definitions saved at 2019-10-17T16:28:41.852Z ###
+
+type PloneSite implements Node @dontInfer {
+  UID: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  exclude_from_nav: Boolean
+  is_folderish: Boolean
+  items: [PloneSiteItems]
+  items_total: Int
+  language: String
+  layout: String
+  modified: Date @dateformat
+  review_state: String
+  rights: String
+  title: String
+  version: String
+  _path: String
+  _components: PloneSite_components
+  _id: String
+  _type: String
+  nodes: [PloneDocumentPloneFolderPloneLIFUnion] @link(by: "id", from: "nodes___NODE")
+  _parent: PloneSite_parent
+  _backlinks: [String]
+}
+
+type PloneSiteItems {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneSite_components {
+  breadcrumbs: PloneSite_componentsBreadcrumbs
+  navigation: PloneSite_componentsNavigation
+  workflow: PloneSite_componentsWorkflow
+}
+
+type PloneSite_componentsBreadcrumbs {
+  _path: String
+  _id: String
+}
+
+type PloneSite_componentsNavigation {
+  items: [PloneSite_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneSite_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneSite_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+union PloneDocumentPloneFolderPloneLIFUnion = PloneDocument | PloneFolder | PloneLIF
+
+type PloneSite_parent {
+  description: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneBreadcrumbs implements Node @dontInfer {
+  items: [PloneBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneDocumentPloneEventPloneFilePloneFolderPloneImagePloneLIFPloneLinkPloneNewsItemUnion] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+union PloneDocumentPloneEventPloneFilePloneFolderPloneImagePloneLIFPloneLinkPloneNewsItemUnion = PloneDocument | PloneEvent | PloneFile | PloneFolder | PloneImage | PloneLIF | PloneLink | PloneNewsItem
+
+type PloneNavigation implements Node @dontInfer {
+  items: [PloneNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneLIF implements Node @dontInfer {
+  UID: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  exclude_from_nav: Boolean
+  is_folderish: Boolean
+  items_total: Int
+  language: String
+  layout: String
+  modified: Date @dateformat
+  review_state: String
+  rights: String
+  title: String
+  version: String
+  _path: String
+  _components: PloneLIF_components
+  _id: String
+  _type: String
+  _parent: PloneLIF_parent
+  _backlinks: [String]
+}
+
+type PloneLIF_components {
+  breadcrumbs: PloneLIF_componentsBreadcrumbs
+  navigation: PloneLIF_componentsNavigation
+  workflow: PloneLIF_componentsWorkflow
+}
+
+type PloneLIF_componentsBreadcrumbs {
+  items: [PloneLIF_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneLIF] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneLIF_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneLIF_componentsNavigation {
+  items: [PloneLIF_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneLIF_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneLIF_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+type PloneLIF_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneFolder implements Node @dontInfer {
+  UID: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  effective: Date @dateformat
+  exclude_from_nav: Boolean
+  is_folderish: Boolean
+  items: [PloneFolderItems]
+  items_total: Int
+  language: String
+  layout: String
+  modified: Date @dateformat
+  nextPreviousEnabled: Boolean
+  review_state: String
+  title: String
+  version: String
+  _path: String
+  _components: PloneFolder_components
+  _id: String
+  _type: String
+  nodes: [PloneDocumentPloneEventPloneFilePloneFolderPloneImagePloneLinkPloneNewsItemUnion] @link(by: "id", from: "nodes___NODE")
+  _parent: PloneFolder_parent
+  _backlinks: [String]
+}
+
+type PloneFolderItems {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneFolder_components {
+  breadcrumbs: PloneFolder_componentsBreadcrumbs
+  navigation: PloneFolder_componentsNavigation
+  workflow: PloneFolder_componentsWorkflow
+}
+
+type PloneFolder_componentsBreadcrumbs {
+  items: [PloneFolder_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneFolder] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneFolder_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneFolder_componentsNavigation {
+  items: [PloneFolder_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneFolder_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneFolder_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+union PloneDocumentPloneEventPloneFilePloneFolderPloneImagePloneLinkPloneNewsItemUnion = PloneDocument | PloneEvent | PloneFile | PloneFolder | PloneImage | PloneLink | PloneNewsItem
+
+type PloneFolder_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneEvent implements Node @dontInfer {
+  UID: String
+  changeNote: String
+  contact_name: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  effective: Date @dateformat
+  end: Date @dateformat
+  event_url: String
+  exclude_from_nav: Boolean
+  is_folderish: Boolean
+  language: String
+  layout: String
+  location: String
+  modified: Date @dateformat
+  open_end: Boolean
+  review_state: String
+  start: Date @dateformat
+  text: PloneEventText
+  title: String
+  version: String
+  versioning_enabled: Boolean
+  whole_day: Boolean
+  _path: String
+  _components: PloneEvent_components
+  _id: String
+  _type: String
+  _parent: PloneEvent_parent
+  _backlinks: [String]
+}
+
+type PloneEventText {
+  content_type: String @proxy(from: "content-type")
+  data: String
+  encoding: String
+  react: String
+}
+
+type PloneEvent_components {
+  breadcrumbs: PloneEvent_componentsBreadcrumbs
+  navigation: PloneEvent_componentsNavigation
+  workflow: PloneEvent_componentsWorkflow
+}
+
+type PloneEvent_componentsBreadcrumbs {
+  items: [PloneEvent_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneEventPloneFolderUnion] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneEvent_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+union PloneEventPloneFolderUnion = PloneEvent | PloneFolder
+
+type PloneEvent_componentsNavigation {
+  items: [PloneEvent_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneEvent_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneEvent_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+type PloneEvent_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneFile implements Node @dontInfer {
+  UID: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  exclude_from_nav: Boolean
+  file: File @link(by: "id", from: "file___NODE")
+  is_folderish: Boolean
+  language: String
+  layout: String
+  modified: Date @dateformat
+  title: String
+  version: String
+  _path: String
+  _components: PloneFile_components
+  _id: String
+  _type: String
+  _parent: PloneFile_parent
+  _backlinks: [String]
+}
+
+type File implements Node @dontInfer {
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+  sourceInstanceName: String
+  absolutePath: String
+  relativePath: String
+  extension: String
+  size: Int
+  prettySize: String
+  modifiedTime: Date @dateformat
+  accessTime: Date @dateformat
+  changeTime: Date @dateformat
+  birthTime: Date @dateformat
+  root: String
+  dir: String
+  base: String
+  ext: String
+  name: String
+  relativeDirectory: String
+  dev: Int
+  mode: Int
+  nlink: Int
+  uid: Int
+  gid: Int
+  rdev: Int
+  blksize: Int
+  ino: Int
+  blocks: Int
+  atimeMs: Float
+  mtimeMs: Float
+  ctimeMs: Float
+  atime: Date @dateformat
+  mtime: Date @dateformat
+  ctime: Date @dateformat
+  url: String
+  content_type: String @proxy(from: "content-type")
+  download: String
+  filename: String
+  height: Int
+  scales: FileScales
+  width: Int
+}
+
+type FileScales {
+  icon: FileScalesIcon
+  large: FileScalesLarge
+  listing: FileScalesListing
+  mini: FileScalesMini
+  preview: FileScalesPreview
+  thumb: FileScalesThumb
+  tile: FileScalesTile
+}
+
+type FileScalesIcon {
+  download: String
+  height: Int
+  width: Int
+}
+
+type FileScalesLarge {
+  download: String
+  height: Int
+  width: Int
+}
+
+type FileScalesListing {
+  download: String
+  height: Int
+  width: Int
+}
+
+type FileScalesMini {
+  download: String
+  height: Int
+  width: Int
+}
+
+type FileScalesPreview {
+  download: String
+  height: Int
+  width: Int
+}
+
+type FileScalesThumb {
+  download: String
+  height: Int
+  width: Int
+}
+
+type FileScalesTile {
+  download: String
+  height: Int
+  width: Int
+}
+
+type PloneFile_components {
+  breadcrumbs: PloneFile_componentsBreadcrumbs
+  navigation: PloneFile_componentsNavigation
+  workflow: PloneFile_componentsWorkflow
+}
+
+type PloneFile_componentsBreadcrumbs {
+  items: [PloneFile_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneFilePloneFolderUnion] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneFile_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+union PloneFilePloneFolderUnion = PloneFile | PloneFolder
+
+type PloneFile_componentsNavigation {
+  items: [PloneFile_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneFile_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneFile_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+type PloneFile_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneDocument implements Node @dontInfer {
+  UID: String
+  changeNote: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  effective: Date @dateformat
+  exclude_from_nav: Boolean
+  is_folderish: Boolean
+  language: String
+  layout: String
+  modified: Date @dateformat
+  review_state: String
+  rights: String
+  table_of_contents: Boolean
+  text: PloneDocumentText
+  title: String
+  version: String
+  versioning_enabled: Boolean
+  _path: String
+  _components: PloneDocument_components
+  _id: String
+  _type: String
+  _parent: PloneDocument_parent
+  _backlinks: [String]
+}
+
+type PloneDocumentText {
+  content_type: String @proxy(from: "content-type")
+  data: String
+  encoding: String
+  react: String
+}
+
+type PloneDocument_components {
+  breadcrumbs: PloneDocument_componentsBreadcrumbs
+  navigation: PloneDocument_componentsNavigation
+  workflow: PloneDocument_componentsWorkflow
+}
+
+type PloneDocument_componentsBreadcrumbs {
+  items: [PloneDocument_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneDocumentPloneFolderUnion] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneDocument_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+union PloneDocumentPloneFolderUnion = PloneDocument | PloneFolder
+
+type PloneDocument_componentsNavigation {
+  items: [PloneDocument_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneDocument_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneDocument_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+type PloneDocument_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneLink implements Node @dontInfer {
+  UID: String
+  changeNote: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  effective: Date @dateformat
+  exclude_from_nav: Boolean
+  is_folderish: Boolean
+  language: String
+  layout: String
+  modified: Date @dateformat
+  remoteUrl: String
+  review_state: String
+  title: String
+  version: String
+  versioning_enabled: Boolean
+  _path: String
+  _components: PloneLink_components
+  _id: String
+  _type: String
+  _parent: PloneLink_parent
+  _backlinks: [String]
+}
+
+type PloneLink_components {
+  breadcrumbs: PloneLink_componentsBreadcrumbs
+  navigation: PloneLink_componentsNavigation
+  workflow: PloneLink_componentsWorkflow
+}
+
+type PloneLink_componentsBreadcrumbs {
+  items: [PloneLink_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneFolderPloneLinkUnion] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneLink_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+union PloneFolderPloneLinkUnion = PloneFolder | PloneLink
+
+type PloneLink_componentsNavigation {
+  items: [PloneLink_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneLink_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneLink_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+type PloneLink_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneNewsItem implements Node @dontInfer {
+  UID: String
+  changeNote: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  exclude_from_nav: Boolean
+  image: File @link(by: "id", from: "image___NODE")
+  is_folderish: Boolean
+  language: String
+  layout: String
+  modified: Date @dateformat
+  review_state: String
+  text: PloneNewsItemText
+  title: String
+  version: String
+  versioning_enabled: Boolean
+  _path: String
+  _components: PloneNewsItem_components
+  _id: String
+  _type: String
+  _parent: PloneNewsItem_parent
+  _backlinks: [String]
+}
+
+type PloneNewsItemText {
+  content_type: String @proxy(from: "content-type")
+  data: String
+  encoding: String
+  react: String
+}
+
+type PloneNewsItem_components {
+  breadcrumbs: PloneNewsItem_componentsBreadcrumbs
+  navigation: PloneNewsItem_componentsNavigation
+  workflow: PloneNewsItem_componentsWorkflow
+}
+
+type PloneNewsItem_componentsBreadcrumbs {
+  items: [PloneNewsItem_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneFolderPloneNewsItemUnion] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneNewsItem_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+union PloneFolderPloneNewsItemUnion = PloneFolder | PloneNewsItem
+
+type PloneNewsItem_componentsNavigation {
+  items: [PloneNewsItem_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneNewsItem_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneNewsItem_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+type PloneNewsItem_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
+
+type PloneImage implements Node @dontInfer {
+  UID: String
+  created: Date @dateformat
+  creators: [String]
+  description: String
+  exclude_from_nav: Boolean
+  image: File @link(by: "id", from: "image___NODE")
+  is_folderish: Boolean
+  language: String
+  layout: String
+  modified: Date @dateformat
+  title: String
+  version: String
+  _path: String
+  _components: PloneImage_components
+  _id: String
+  _type: String
+  _parent: PloneImage_parent
+  _backlinks: [String]
+}
+
+type PloneImage_components {
+  breadcrumbs: PloneImage_componentsBreadcrumbs
+  navigation: PloneImage_componentsNavigation
+  workflow: PloneImage_componentsWorkflow
+}
+
+type PloneImage_componentsBreadcrumbs {
+  items: [PloneImage_componentsBreadcrumbsItems]
+  _path: String
+  _id: String
+  nodes: [PloneFolderPloneImageUnion] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneImage_componentsBreadcrumbsItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+union PloneFolderPloneImageUnion = PloneFolder | PloneImage
+
+type PloneImage_componentsNavigation {
+  items: [PloneImage_componentsNavigationItems]
+  _path: String
+  _id: String
+  nodes: [PloneSite] @link(by: "id", from: "nodes___NODE")
+}
+
+type PloneImage_componentsNavigationItems {
+  title: String
+  _path: String
+  _id: String
+}
+
+type PloneImage_componentsWorkflow {
+  _path: String
+  _id: String
+}
+
+type PloneImage_parent {
+  description: String
+  review_state: String
+  title: String
+  _path: String
+  _id: String
+  _type: String
+}
