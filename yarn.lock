@@ -5324,9 +5324,10 @@ gatsby-source-filesystem@^2.1.18, gatsby-source-filesystem@^2.1.33:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-"gatsby-source-plone@git+https://github.com/collective/gatsby-source-plone.git#8f43d039845ad5ea8331106378395be3cc6263c5":
+gatsby-source-plone@^0.2.0:
   version "0.2.0"
-  resolved "git+https://github.com/collective/gatsby-source-plone.git#8f43d039845ad5ea8331106378395be3cc6263c5"
+  resolved "https://registry.yarnpkg.com/gatsby-source-plone/-/gatsby-source-plone-0.2.0.tgz#0437bd6fad10affb6ac51ea5be8503853b7422ea"
+  integrity sha512-nqvwW7NtCOWl8hjfa04a6UOlH7tgj3ZdA7lzS/KexmRgGGfXXAst70l/7W2E7mJ69GY18L1fspeUUXu2nWJaWw==
   dependencies:
     axios "^0.19.0"
     axios-retry "^3.1.2"
