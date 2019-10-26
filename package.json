@@ -10,7 +10,7 @@
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sharp": "^2.2.32",
     "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-source-plone": "git+https://github.com/collective/gatsby-source-plone.git#8f43d039845ad5ea8331106378395be3cc6263c5",
+    "gatsby-source-plone": "^0.2.0",
     "gatsby-transformer-sharp": "^2.2.23",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
